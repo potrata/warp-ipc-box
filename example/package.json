@@ -4,7 +4,8 @@
   "description": "Inter-process component container",
   "main": "index.es6",
   "scripts": {
-    "start": "babel-node --ignore=false --extensions='.es6' ."
+    "start": "babel-node --ignore=false --extensions='.es6' .",
+    "debug": "babel-node --ignore=false --extensions='.es6' . --debug"
   },
   "repository": {
     "type": "git",
