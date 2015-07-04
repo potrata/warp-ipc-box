@@ -1,0 +1,41 @@
+@startuml
+
+
+node "Main Application\n----" as Main {
+  package Config #cccccc {
+      rectangle first #99ff99
+      rectangle second #99ff99
+      rectangle ipc #99ccff {
+        rectangle "app" as ipcapp #ff7777
+        rectangle "components" as ipccomponents #fff {
+          rectangle "first" as ipcfirst #ff99ff
+          rectangle "second" as ipcsecond #ff99ff
+        }
+      }
+  }
+  package Components #fff {
+    [First Component] #99ff99
+    [Second Component] #99ff99
+    [warp-ipc-box] #99ccff
+    [First Component] --> first
+    [Second Component] --> second
+    [warp-ipc-box] .> ipc: loads
+  }
+  rectangle "Master Event Bus" as localEvents
+  rectangle "Filter" as localFilter
+}
+
+node "Forked Process\n----" as Fork #ff7777 {
+  package "Components" as ComponentsCopy #fff {
+    ["First Component"] #ff99ff
+    ["Second Component"] #ff99ff
+  rectangle "Forked Local Bus" as forkEvents
+  rectangle "Filter" as forkFilter
+}
+Fork <- [warp-ipc-box]: creates
+forkEvents <-> forkFilter
+forkFilter 0=> localFilter
+localEvents <-> localFilter
+forkFilter <==0 localFilter
+
+@enduml

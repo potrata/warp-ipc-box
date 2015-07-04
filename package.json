@@ -1,0 +1,20 @@
+{
+  "name": "@hp/warp-ipc-box",
+  "version": "0.0.0",
+  "description": "Inter-process component container",
+  "main": "index.es6",
+  "scripts": {
+    "start": "cd ./example && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stash.head-point.ru/scm/warp/warp-ipc-box.git"
+  },
+  "keywords": [
+    "warp",
+    "component",
+    "ipc"
+  ],
+  "author": "Николай Чурсин <n_chursin@head-point.ru>",
+  "license": "ISC"
+}

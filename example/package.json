@@ -1,0 +1,26 @@
+{
+  "name": "@hp/warp-ipc-box",
+  "version": "0.0.1",
+  "description": "Inter-process component container",
+  "main": "index.es6",
+  "scripts": {
+    "start": "babel-node --ignore=false --extensions='.es6' ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stash.head-point.ru/scm/warp/warp-ipc-box.git"
+  },
+  "dependencies": {
+    "@hp/warp": "^1.x.x",
+    "@hp/warp-ticker": "0.x.x",
+    "@hp/warp-ipc-box": "file:./../",
+    "babel": "^5.x.x"
+  },
+  "keywords": [
+    "warp",
+    "component",
+    "ipc"
+  ],
+  "author": "Николай Чурсин <n_chursin@head-point.ru>",
+  "license": "ISC"
+}
