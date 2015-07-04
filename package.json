@@ -1,6 +1,6 @@
 {
   "name": "@hp/warp-ipc-box",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Inter-process component container",
   "main": "index.es6",
   "scripts": {
