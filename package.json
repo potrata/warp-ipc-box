@@ -1,6 +1,6 @@
 {
   "name": "warp-ipc-box",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Inter-process component container",
   "main": "./dist/index.js",
   "scripts": {
