@@ -9,9 +9,8 @@ let config = {
   components: {}
 };
 
-
 config.components['ticker'] = {
-  path: '@hp/warp-ticker',
+  path: 'warp-ticker',
   config: {
     id: 'ticker-local',
     event: `tick.master`,
@@ -21,7 +20,7 @@ config.components['ticker'] = {
 };
 
 config.components['box-1'] = {
-  path: '@hp/warp-ipc-box',
+  path: 'warp-ipc-box',
   config: {
     id: 'container-1',
     appConfig: {
@@ -30,7 +29,7 @@ config.components['box-1'] = {
     },
     components: {
       'ticker': {
-        path: '@hp/warp-ticker', copies: 2, id: (i) => `ticker-1-${i}`,
+        path: 'warp-ticker', copies: 2, id: (i) => `ticker-1-${i}`,
         config: (i) => {
           /** tick every 1.1, 2.2 seconds */
           return {
@@ -44,7 +43,7 @@ config.components['box-1'] = {
 };
 
 config.components['box-2'] = {
-  path: '@hp/warp-ipc-box',
+  path: 'warp-ipc-box',
   config: {
     id: 'container-2',
     appConfig: {
@@ -53,7 +52,7 @@ config.components['box-2'] = {
     },
     components: {
       'ticker': {
-        path: '@hp/warp-ticker', copies: 2, id: (i) => `ticker-2-${i}`,
+        path: 'warp-ticker', copies: 2, id: (i) => `ticker-2-${i}`,
         config: (i) => {
           /** tick every 1.7, 1.9 seconds */
           return {

@@ -2,25 +2,22 @@
 
 import path from 'path';
 import {fork} from 'child_process';
-import {Component} from '@hp/warp';
+import {Component} from 'node-warp';
 import decorateBus from './lib/_bus-decorator';
 
 export default class IPCBox extends Component {
   * init() {
+    let {appConfig, components} = this.config;
     let _processSingleEntry = ([key, value]) => {
-      let result = {};
-      for (let copyIdx = 0; copyIdx < (value.copies || 1); copyIdx++) {
-        Object.assign(result, {
-          [`key-${copyIdx}`]: {
-            path: value.path || path.join(this.config.appConfig.componentsRoot, key),
-            config: Object.assign({ id: value.id(copyIdx) }, value.config(copyIdx))
-          }
-        });
-      }
-      return result;
+      return Object.assign({}, {
+        [key]: {
+          path: value.path || path.join(appConfig.componentsRoot, key),
+          config: Object.assign({ id: value.id }, value.config)
+        }
+      });
     };
 
-    this._componentData = Object.entries(this.config.components)
+    this._componentData = Object.entries(components)
       .map(entry => _processSingleEntry(entry))
       .reduce((collector, obj) => {
         return Object.assign(collector, obj);
@@ -56,4 +53,3 @@ export default class IPCBox extends Component {
     }
   }
 }
-

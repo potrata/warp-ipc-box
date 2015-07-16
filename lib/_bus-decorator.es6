@@ -1,6 +1,6 @@
 'use strict';
 
-import Bus from '@hp/warp/lib/bus.es6';
+import Bus from 'node-warp/lib/bus.es6';
 
 /**
  * @desc Inter-process Bus Implementation

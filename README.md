@@ -7,9 +7,9 @@ warp-ipc-box
 
 ### Installation
 ``` bash
-$ npm install @hp/warp-ipc-box
+$ npm install warp-ipc-box
 ```
 ### Running Example
 ``` bash
-$ cd ./node_modules/@hp/warp-ipc-box && npm start
+$ cd ./node_modules/warp-ipc-box && npm run example
 ```

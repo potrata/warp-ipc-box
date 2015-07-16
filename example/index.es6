@@ -1,6 +1,6 @@
 'use strict';
 
-import warp from '@hp/warp';
+import warp from 'node-warp';
 import config from './config';
 
 let app = warp({ name: config.app.name });
